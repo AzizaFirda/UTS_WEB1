@@ -1,0 +1,15 @@
+body { background: #eef1f5; font-family: 'Segoe UI', sans-serif; }
+.navbar { box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+h2 { font-weight: 600; }
+.card { border-radius: 12px; transition: .3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+input.form-control { border-radius: 10px; padding: 10px; }
+button { border-radius: 10px !important; }
+.footer {
+margin-top: 50px;
+padding: 12px;
+background: #0d1b2a;
+color: white;
+text-align: center;
+font-size: 14px;
+}
