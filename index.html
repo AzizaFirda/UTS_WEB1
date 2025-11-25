@@ -1,93 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HIMATIF - Pencatatan Keuangan</title>
-<!-- Bootstrap 5 CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistem Pencatatan Keuangan Bendahara Himatif UTB">
+    <title>Sistem Pencatatan Keuangan - Bendahara Himatif UTB</title>
+    
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="src/css/variables.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/animations.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-<div class="container">
-<a class="navbar-brand" href="#">HIMATIF</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navMenu">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-<li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-</ul>
-</div>
-</div>
-</nav>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Bendahara Himatif</span>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <span id="userDisplay" class="user-display"></span>
+                    <button id="logoutBtn" class="btn btn-secondary btn-sm" style="display: none;">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
 
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <div id="homePage" class="page active">
+                <div class="hero">
+                    <h1><i class="fas fa-coins"></i> Sistem Pencatatan Keuangan</h1>
+                    <p>Bendahara Himpunan Mahasiswa Informatika UTB</p>
+                </div>
 
-<header class="bg-light py-5 mb-4">
-<div class="container text-center">
-<h1 class="display-5">Sistem Pencatatan Keuangan HIMATIF</h1>
-<p class="lead">Pantau kas, pemasukan, dan pengeluaran organisasi dengan mudah.</p>
-</div>
-</header>
+                <div class="cards-grid">
+                    <div class="card" data-detail="laporan">
+                        <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Laporan Keuangan</h3>
+                        <p>Lihat laporan komprehensif tentang pemasukan, pengeluaran, dan saldo kas organisasi kami.</p>
+                    </div>
 
+                    <div class="card" data-detail="pemasukan">
+                        <div class="card-icon"><i class="fas fa-arrow-down"></i></div>
+                        <h3>Pemasukan</h3>
+                        <p>Data lengkap pemasukan dari berbagai sumber termasuk iuran anggota dan sponsorship.</p>
+                    </div>
 
-<main class="container mb-5">
-<div class="row g-4" id="infoList">
-<!-- Kartu informasi akan di-generate oleh JavaScript -->
-</div>
-<!-- Form CRUD Pemasukan/Pengeluaran -->
-<section class="mt-5">
-<h4>Catatan Keuangan</h4>
+                    <div class="card" data-detail="pengeluaran">
+                        <div class="card-icon"><i class="fas fa-arrow-up"></i></div>
+                        <h3>Pengeluaran</h3>
+                        <p>Rincian detail pengeluaran untuk kegiatan, operasional, dan program kerja organisasi.</p>
+                    </div>
 
+                    <div class="card" data-detail="anggaran">
+                        <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Rencana Anggaran</h3>
+                        <p>Perencanaan anggaran tahunan untuk setiap program kerja dan kegiatan organisasi.</p>
+                    </div>
 
-<form id="financeForm" class="row g-3 mb-4">
-<div class="col-md-4">
-<label class="form-label">Jenis</label>
-<select id="fType" class="form-select" required>
-<option value="pemasukan">Pemasukan</option>
-<option value="pengeluaran">Pengeluaran</option>
-</select>
-</div>
-<div class="col-md-4">
-<label class="form-label">Deskripsi</label>
-<input type="text" id="fDesc" class="form-control" required />
-</div>
-<div class="col-md-4">
-<label class="form-label">Jumlah (Rp)</label>
-<input type="number" id="fAmount" class="form-control" required />
-</div>
-<div class="col-12 text-end">
-<button class="btn btn-success" type="submit">Tambah Catatan</button>
-</div>
-</form>
+                    <div class="card" data-detail="audit">
+                        <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Audit & Transparansi</h3>
+                        <p>Laporan audit dan pertanggungjawaban keuangan untuk transparansi organisasi.</p>
+                    </div>
 
+                    <div class="card" data-detail="kontak">
+                        <div class="card-icon"><i class="fas fa-phone"></i></div>
+                        <h3>Hubungi Kami</h3>
+                        <p>Silakan hubungi bendahara untuk pertanyaan terkait pencatatan dan laporan keuangan.</p>
+                    </div>
+                </div>
 
-<h5>Daftar Catatan Keuangan</h5>
-<table class="table table-bordered mt-3">
-<thead class="table-dark">
-<tr>
-<th>Jenis</th>
-<th>Deskripsi</th>
-<th>Jumlah</th>
-<th>Aksi</th>
-</tr>
-</thead>
-<tbody id="financeTable"></tbody>
-</table>
-</section>
+                <div class="cta-section">
+                    <button class="btn btn-primary btn-lg" id="loginCta">
+                        <i class="fas fa-sign-in-alt"></i> Login Akses Sistem
+                    </button>
+                </div>
+            </div>
 
+            <!-- Detail Page -->
+            <div id="detailPage" class="page">
+                <button class="btn btn-secondary btn-back" id="backFromDetail">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+                <div class="detail-card">
+                    <h2 id="detailTitle"></h2>
+                    <p id="detailContent"></p>
+                </div>
+            </div>
 
-</main>
+            <!-- Login Page -->
+            <div id="loginPage" class="page">
+                <div class="auth-container">
+                    <div class="auth-box">
+                        <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                        <p class="auth-subtitle">Masuk ke sistem pencatatan keuangan</p>
+                        <div id="loginError"></div>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginUsername">Username</label>
+                                <input type="text" id="loginUsername" placeholder="Masukkan username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" placeholder="Masukkan password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                        </form>
+                        <div class="auth-link">
+                            Belum punya akun? <a href="#" id="toRegister">Daftar di sini</a>
+                        </div>
+                        <div class="auth-link">
+                            <a href="#" id="backToHome"><i class="fas fa-arrow-left"></i> Kembali ke beranda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Register Page -->
+            <div id="registerPage" class="page">
+                <div class="auth-container">
+                    <div class="auth-box">
+                        <h2><i class="fas fa-user-plus"></i> Registrasi</h2>
+                        <p class="auth-subtitle">Buat akun baru untuk mengakses sistem</p>
+                        <div id="registerError"></div>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="regUsername">Username</label>
+                                <input type="text" id="regUsername" placeholder="Buat username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regEmail">Email</label>
+                                <input type="email" id="regEmail" placeholder="Masukkan email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regPassword">Password</label>
+                                <input type="password" id="regPassword" placeholder="Buat password (min. 6 karakter)" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regConfirmPassword">Konfirmasi Password</label>
+                                <input type="password" id="regConfirmPassword" placeholder="Konfirmasi password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-user-plus"></i> Daftar
+                            </button>
+                        </form>
+                        <div class="auth-link">
+                            Sudah punya akun? <a href="#" id="toLogin">Login di sini</a>
+                        </div>
+                        <div class="auth-link">
+                            <a href="#" id="backToHome2"><i class="fas fa-arrow-left"></i> Kembali ke beranda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<footer class="bg-dark text-white py-3 mt-auto">
-<div class="container text-center small">@Copyright by NPM_NAMA_MAHASISWA_KELAS</div>
-</footer>
+            <!-- Dashboard Page -->
+            <div id="dashboardPage" class="page">
+                <div class="dashboard-header">
+                    <h2><i class="fas fa-chart-line"></i> Dashboard Keuangan</h2>
+                    <p>Selamat datang, <span id="dashboardUser"></span>!</p>
+                </div>
 
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label"><i class="fas fa-arrow-down"></i> Total Pemasukan</div>
+                        <div class="stat-value">Rp 45.500.000</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label"><i class="fas fa-arrow-up"></i> Total Pengeluaran</div>
+                        <div class="stat-value">Rp 32.250.000</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label"><i class="fas fa-wallet"></i> Saldo Kas</div>
+                        <div class="stat-value">Rp 13.250.000</div>
+                    </div>
+                </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/app.js"></script>
+                <div class="table-container">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-calendar"></i> Tanggal</th>
+                                <th><i class="fas fa-list"></i> Keterangan</th>
+                                <th><i class="fas fa-tag"></i> Kategori</th>
+                                <th><i class="fas fa-money-bill"></i> Jumlah</th>
+                                <th><i class="fas fa-info-circle"></i> Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15 Nov 2024</td>
+                                <td>Iuran Anggota Periode 1</td>
+                                <td>Pemasukan</td>
+                                <td>Rp 5.000.000</td>
+                                <td><span class="status-badge status-success">Terima</span></td>
+                            </tr>
+                            <tr>
+                                <td>14 Nov 2024</td>
+                                <td>Pembelian Perlengkapan Event</td>
+                                <td>Pengeluaran</td>
+                                <td>Rp 2.500.000</td>
+                                <td><span class="status-badge status-success">Verifikasi</span></td>
+                            </tr>
+                            <tr>
+                                <td>12 Nov 2024</td>
+                                <td>Sponsorship Acara Tahunan</td>
+                                <td>Pemasukan</td>
+                                <td>Rp 8.000.000</td>
+                                <td><span class="status-badge status-success">Terima</span></td>
+                            </tr>
+                            <tr>
+                                <td>10 Nov 2024</td>
+                                <td>Biaya Sewa Lokasi</td>
+                                <td>Pengeluaran</td>
+                                <td>Rp 3.500.000</td>
+                                <td><span class="status-badge status-success">Verifikasi</span></td>
+                            </tr>
+                            <tr>
+                                <td>08 Nov 2024</td>
+                                <td>Iuran Anggota Periode 2</td>
+                                <td>Pemasukan</td>
+                                <td>Rp 4.200.000</td>
+                                <td><span class="status-badge status-danger">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> 
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            @Copyright by 23552011059_Aziza Firdaus_TIF RP 23 CNS B
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="src/js/utils/constants.js"></script>
+    <script src="src/js/utils/helpers.js"></script>
+    <script src="src/js/utils/validators.js"></script>
+    <script src="src/js/utils/storage.js"></script>
+    <script src="src/js/state.js"></script>
+    <script src="src/js/auth.js"></script>
+    <script src="src/js/components.js"></script>
+    <script src="src/js/navigation.js"></script>
+    <script src="src/data/detailData.js"></script>
+    <script src="src/js/app.js"></script>
 </body>
 </html>
