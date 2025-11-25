@@ -1,4 +1,4 @@
-# 💰 Sistem Pencatatan Keuangan Bendahara Himatif UTB
+# 💰 Sistem Pencatatan Keuangan
 
 ---
 
@@ -358,3 +358,4 @@ Happy coding! 🚀
 **Versi 1.0.0** — 2025
 
 </div>
+
