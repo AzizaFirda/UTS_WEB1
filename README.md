@@ -298,12 +298,14 @@ CREATE TABLE transactions (
 
 <div align="center">
   
-## 🎉 Terima Kasih
+### 🎉 Terima Kasih
+
 ### Dibuat dengan ❤️ untuk Himatif UTB
 
 **Versi 1.0.0** — 2025
 
 </div>
+
 
 
 
