@@ -1,5 +1,4 @@
-# 💰 Sistem Pencatatan Keuangan
-
+# 💰 SISTEM PENCATATAN KEUANGAN
 ---
 
 ## 📋 Deskripsi Project
@@ -38,14 +37,14 @@
 
 ### Sistem Autentikasi
 
-##### Login Page
+#### Login Page
 - Form login dengan username & password
 - Validasi ketat menggunakan IF statements
 - Error messages yang user-friendly dan informatif
 - Redirect otomatis ke dashboard setelah login sukses
 - Link ke halaman registrasi untuk akun baru
 
-##### Register Page
+#### Register Page
 - Form pendaftaran untuk akun baru
 - Validasi lengkap setiap field form
 - Password confirmation check
@@ -94,52 +93,54 @@
 
 ---
 
-## 📁 Struktur Project
+## 📝 Struktur Project
 
 ```
-bendahara-keuangan-app/
-│
-├── 📄 index.html                   # File HTML utama (entry point)
-├── 📄 package.json                 # Project metadata & config
-├── 📄 README.md                    # Dokumentasi (file ini)
-├── 📄 .gitignore                   # Git ignore rules
-│
-├── 📁 src/                         # Source code folder
-│   ├── 📁 css/                     # Stylesheet files
-│   │   ├── variables.css           # CSS variables & theme
-│   │   ├── main.css                # Main styles & layout
-│   │   ├── components.css          # Component styles
-│   │   ├── animations.css          # Animation library
-│   │   └── responsive.css          # Media queries
+UTS_WEB1/
+├── api/                             # Backend API berbasis PHP
+│   ├── flow/                        # Proses CRUD utama
+│   │   ├── delete_data.php          # Menghapus data dari database
+│   │   ├── get_data.php             # Mengambil data dari database
+│   │   ├── insup_data.php           # Insert & update data
 │   │
-│   ├── 📁 js/                      # JavaScript files
-│   │   ├── app.js                  # Entry point aplikasi
-│   │   ├── state.js                # State management
-│   │   ├── auth.js                 # Authentication logic
-│   │   ├── navigation.js           # Page navigation
-│   │   ├── components.js           # UI components
-│   │   │
-│   │   └── 📁 utils/               # Utility functions
-│   │       ├── constants.js        # Constants & enums
-│   │       ├── helpers.js          # Helper functions
-│   │       ├── validators.js       # Form validators
-│   │       └── storage.js          # LocalStorage manager
+│   ├── koneksi/                     # Konfigurasi koneksi database
+│   │   └── connection.php           # File koneksi ke database MySQL
 │   │
-│   └── 📁 data/                    # Data files
-│       └── detailData.js           # Detail content data
+│   └── photo/                       # Endpoint file foto
+│       └── index.php                # Handler upload/akses foto
 │
-├── 📁 assets/                      # Static assets folder
-│   ├── 📁 images/                  # Images & icons
-│   │   ├── founders/               # Founder profile photos
-│   │   ├── courses/                # Course thumbnails
-│   │   └── hero/                   # Hero section images
+├── assets/                          # File pendukung (gambar/screenshot)
+│   ├── bruno_screenshots/           # Screenshot pengujian API via Bruno
+│   └── web_screenshots/             # Screenshot tampilan web
+│
+├── src/                             # Sumber utama frontend
+│   ├── css/                         # Style CSS
+│   │   ├── animations.css           # Efek animasi UI
+│   │   ├── components.css           # Style komponen UI
+│   │   ├── main.css                 # Style global
+│   │   ├── responsive.css           # Style untuk tampilan responsif
+│   │   └── variables.css            # Variabel CSS (color, size, dll)
 │   │
-│   └── 📁 fonts/                   # Custom fonts
+│   ├── data/                        # Data statis
+│   │   └── detaildata.js            # File data detail (dummy/statik)
+│   │
+│   ├── js/                          # Logika aplikasi JavaScript
+│       ├── utils/                   # Kumpulan fungsi utilitas
+│       │   ├── constants.js         # Constant global
+│       │   ├── helpers.js           # Fungsi helper umum
+│       │   ├── storage.js           # Pengelolaan localStorage/session
+│       │   └── validators.js        # Validasi input/form
+│       │
+│       ├── app.js                   # Entry point aplikasi
+│       ├── auth.js                  # Logika autentikasi (login/logout)
+│       ├── components.js            # Render komponen UI
+│       ├── navigation.js            # Navigasi antar halaman/section
+│       └── state.js                 # State management aplikasi
 │
-└── 📁 docs/                        # Documentation folder
-    ├── SETUP.md                    # Setup guide lengkap
-    ├── ARCHITECTURE.md             # Architecture docs
-    └── COMPONENTS.md               # Components guide
+├── index.html                       # Halaman utama frontend
+├── package.json                     # Konfigurasi Node (jika digunakan)
+└── README.md                        # Dokumentasi project
+
 ```
 
 ---
@@ -214,6 +215,47 @@ ELSE
 
 ---
 
+## 📁 Database
+
+```
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    tanggal DATE NOT NULL,
+    keterangan VARCHAR(255) NOT NULL,
+    kategori ENUM('Pemasukan', 'Pengeluaran') NOT NULL,
+    jumlah DECIMAL(15,2) NOT NULL,
+    status VARCHAR(50) DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+---
+
+## 📸 Screenshots Tampilan Web
+### Beranda
+![Light Mode](./assets/web_screenshots/beranda_light.png)
+### Detail Informasi
+### Register
+### Login
+### Dashboard
+
+## 📸 Screenshots Tampilan BRUNO
+### Create
+### Read
+### Update
+### Delete
+
 ## 🎉 Terima Kasih
 Happy coding! 🚀
 
@@ -226,5 +268,6 @@ Happy coding! 🚀
 **Versi 1.0.0** — 2025
 
 </div>
+
 
 
