@@ -246,30 +246,35 @@ CREATE TABLE transactions (
 ### Beranda
 - Light Mode
 ![Light Mode](./assets/web_screenshots/beranda_light.png)
+
 - Dark Mode
 ![Dark Mode](./assets/web_screenshots/beranda_dark.png)
 
 ### Detail Informasi
 - Light Mode
 ![Light Mode](./assets/web_screenshots/detail_light.png)
+
 - Dark Mode
 ![Dark Mode](./assets/web_screenshots/detail_dark.png)
 
 ### Register
 - Light Mode
 ![Light Mode](./assets/web_screenshots/register_light.png)
+
 - Dark Mode
 ![Dark Mode](./assets/web_screenshots/register_dark.png)
 
 ### Login
 - Light Mode
 ![Light Mode](./assets/web_screenshots/login_light.png)
+
 - Dark Mode
 ![Dark Mode](./assets/web_screenshots/login_dark.png)
 
 ### Dashboard
 - Light Mode
 ![Light Mode](./assets/web_screenshots/dashboard_light.png)
+
 - Dark Mode
 ![Dark Mode](./assets/web_screenshots/dashboard_dark.png)
 
@@ -303,6 +308,7 @@ Happy coding! 🚀
 **Versi 1.0.0** — 2025
 
 </div>
+
 
 
 
