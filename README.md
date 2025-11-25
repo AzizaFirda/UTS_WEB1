@@ -94,7 +94,6 @@
 ---
 
 ## 📝 Struktur Project
-
 ```
 UTS_WEB1/
 ├── api/                             # Backend API berbasis PHP
@@ -216,7 +215,6 @@ ELSE
 ---
 
 ## 📁 Database
-
 ```
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -240,21 +238,58 @@ CREATE TABLE transactions (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
+
 ---
 
 ## 📸 Screenshots Tampilan Web
+
 ### Beranda
+- Light Mode
 ![Light Mode](./assets/web_screenshots/beranda_light.png)
+- Dark Mode
+![Dark Mode](./assets/web_screenshots/beranda_dark.png)
+
 ### Detail Informasi
+- Light Mode
+![Light Mode](./assets/web_screenshots/detail_light.png)
+- Dark Mode
+![Dark Mode](./assets/web_screenshots/detail_dark.png)
+
 ### Register
+- Light Mode
+![Light Mode](./assets/web_screenshots/register_light.png)
+- Dark Mode
+![Dark Mode](./assets/web_screenshots/register_dark.png)
+
 ### Login
+- Light Mode
+![Light Mode](./assets/web_screenshots/login_light.png)
+- Dark Mode
+![Dark Mode](./assets/web_screenshots/login_dark.png)
+
 ### Dashboard
+- Light Mode
+![Light Mode](./assets/web_screenshots/dashboard_light.png)
+- Dark Mode
+![Dark Mode](./assets/web_screenshots/dashboard_dark.png)
+
+---
 
 ## 📸 Screenshots Tampilan BRUNO
+
 ### Create
+![create](./assets/bruno_screenshots/insert_data.png)
+
 ### Read
+![read](./assets/bruno_screenshots/get_data.png)
+
 ### Update
+![update](./assets/bruno_screenshots/update_data.png)
+
 ### Delete
+![delete](./assets/bruno_screenshots/delete_data.png)
+
+---
 
 ## 🎉 Terima Kasih
 Happy coding! 🚀
@@ -268,6 +303,7 @@ Happy coding! 🚀
 **Versi 1.0.0** — 2025
 
 </div>
+
 
 
 
