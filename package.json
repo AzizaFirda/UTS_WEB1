@@ -20,16 +20,16 @@
     "aplikasi-web",
     "accounting"
   ],
-  "author": "Muhammad Rafli Adhitama (2401081011)",
-  "license": "MIT",
+  "author": "Aziza Firdaus (23552011059)",
+  "license": "UTB",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/bendahara-keuangan-app"
+    "url": "https://github.com/AzizaFirda/UTS_WEB1"
   },
   "bugs": {
-    "url": "https://github.com/username/bendahara-keuangan-app/issues"
+    "url": "https://github.com/AzizaFirda/UTS_WEB1/issues"
   },
-  "homepage": "https://github.com/username/bendahara-keuangan-app#readme",
+  "homepage": "https://github.com/AzizaFirda/UTS_WEB1#readme",
   "devDependencies": {
     "live-server": "^1.2.2"
   },
